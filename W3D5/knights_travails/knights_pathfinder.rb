@@ -8,9 +8,6 @@ class KnightPathFinder
     end
 
     def self.valid_moves(pos)
-        return false if pos.sum > 3 || pos.sum < -3
-        # count = pos.count { |ele| [-2,-1,1,2].include?(ele) }
-        # count == 2
         possible_moves = [[2, 1],[2, -1],[-2, 1],[-2, -1],[1, 2],[1, -2],[-1, 2],[-1, -2]]
         valid_moves = []
         possible_moves.each do |move|

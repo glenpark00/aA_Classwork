@@ -55,15 +55,6 @@ class Board
     if poss_moves.include?(end_pos)
       self[start_pos] = sentinel
       self.add_piece(curr_piece, end_pos)
-    
-    # else # there is a piece here(not sure of its color yet)
-    #   target_piece = self[end_pos]
-    #   if curr_piece.color == target_piece.color
-    #     raise ArgumentError.new("Cannot move to #{end_pos}, because same team")
-    #   else
-    #     self[start_pos] = sentinel
-    #     self.add_piece(curr_piece, end_pos)      
-    #   end 
     end
   end
 
@@ -96,3 +87,5 @@ end
 
 # load 'board.rb'
 # b = Board.new
+
+expect { two_sum('str') }.to raise_error

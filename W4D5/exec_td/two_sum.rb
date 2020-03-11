@@ -10,25 +10,8 @@ def two_sum?(arr, target_sum) # O(n^2)
   false
 end
 
-# def two_sum?(arr,target_sum)
-#   sorted = arr.sort # n log n
-#   until sorted.length < 2
-#     mid = sorted.length / 2
-#     mid1 = mid - 1
-#     sum = sorted[mid] + sorted[mid1]
-#     case sum <=> target_sum
-#     when -1
-#       sorted = sorted[0...mid]
-#     when 1
-#       sorted = sorted[mid..-1]
-#     when 0
-#       return true
-#     end
-#   end
-#   false
-# end
 
-def two_sum?(arr, target_sum) # O(n^2 log n)
+def two_sum?(arr, target_sum) # O(n log n)
   sorted = arr.sort
   sorted.each_with_index do |num, i|
     curr_target = target_sum - num
@@ -54,10 +37,6 @@ end
 def two_sum?(arr,target_sum)
   set = arr.to_set # n
   arr.any? { |num| set.include?(target_sum - num) && (target_sum - num) != num }
-  # arr.each do |num|
-  #   curr_target = target_sum - num
-  #   p curr_target
-  # end
 end
 
 arr1 = [0, 1, 2, 3, 4, 5, 7, 10] # first plus last is upper limit when targ < last

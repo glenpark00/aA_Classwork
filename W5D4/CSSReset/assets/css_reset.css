@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  font: inherit;
+  background: transparent;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img {
+  display: inline-block;
+  width: 100%;
+}
+
+ul, ol {
+  list-style-type: none;
+}

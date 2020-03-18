@@ -199,17 +199,20 @@ def expensive_tastes
   # determine the average price per track.
   execute(<<-SQL)
     SELECT
-      style, SUM(price)/SUM(COUNT(*))
+      style, AS price_per_track
     FROM
-      albums
-      JOIN tracks
-        ON tracks.album = asin
-      JOIN styles
-        ON styles.album = asin
-    GROUP BY
-      style
-    ORDER BY
-      SUM(price)/SUM(COUNT(*)) DESC
-    LIMIT 5
+      styles
+      JOIN (
+        SELECT
+          asin, price, COUNT(*) AS num_tracks
+        FROM
+          albums
+          JOIN tracks
+            ON albums.asin = tracks.album
+        GROUP BY
+          asin, price
+      ) AS price_and_num_tracks
+        ON price_and_num_tracks.asin = styles.album
+    
   SQL
 end

@@ -1,0 +1,48 @@
+<h1> Create a new cat! </h1>
+
+
+<form action='/cats' method='POST'>
+  <label for='name'>Name</label>
+  <input id='name' type='text' name='cat[name]'>
+
+  <br>
+  <br>
+
+  <label for='female'>Female</label>
+  <input id='female' type='radio' name='cat[sex]'>
+  <label for='male'>Male</label>
+  <input id='male' type='radio' name='cat[sex]'>
+
+  <br>
+  <br>
+
+    <select id="color" name="cat[color]">
+    <option disabled selected>-- please select --</option>
+    <% Cat.colors.each do |color| %>
+        <option value= <%= color %>> <%= color %> </option>
+    <% end %>
+    </select>
+
+    <br>
+    <br>
+
+    <label for='birth_date'>Birth Date</label>
+
+    <br>
+
+    <input type='date' id='birth_date' name='cat[birth_date]'>
+
+    <br>
+    <br>
+
+    <label for='description'>Description</label>
+
+    <br>
+    
+    <textarea name='cat[description]'><%= @cat.description%></textarea>
+
+    <br>
+    <br>
+
+  <input type='submit' value='Create new cat'>
+</form>

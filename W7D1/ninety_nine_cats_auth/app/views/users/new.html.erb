@@ -1,0 +1,19 @@
+<h1>Sign Up for 99 Cats!</h1>
+
+<form action="<%= users_url %>" method="POST">
+
+    <label>
+        Username:
+        <input type="text" name="user[username]">
+    </label>
+
+    <br>
+
+    <label>
+        Password:
+        <input type="password" name="user[password]">
+    </label>
+
+    <button type="submit">Sign Up</button>
+
+</form>

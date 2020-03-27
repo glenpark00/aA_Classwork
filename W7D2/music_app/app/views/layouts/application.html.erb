@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" type="text/css" href="application.css">
+  </head>
+
+  <body>
+    <header>♪ ♫ ♪ Music App ♪ ♫ ♪
+      <div>
+        <% if logged_in? %>
+          <form action="<%= session_url %>" method="POST">
+            <input type='hidden' name='_method' value='DELETE'>
+            <button type='submit'>Log Out</button>
+          </form>
+        <% else %>
+          <form action="<%= new_session_url %>" method="GET">
+            <button type='submit'>Sign In</button>
+          </form>
+          <form action="<%= new_user_url %>" method="GET">
+            <button type='submit'>Sign Up</button>
+          </form>
+        <% end %>
+      </div>
+    </header>
+
+    <% if logged_in? %>
+      <marquee behavior="scroll" direction="right" scrollamount=12> Hi, <%= current_user.email %>!</marquee>
+    <% end %>
+    
+
+    <%= yield %>
+  </body>
+</html>

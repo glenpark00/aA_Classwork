@@ -1,0 +1,21 @@
+<% section_links = ["World",
+    "San Francisco",
+    "New York",
+    "Bootcamp Prep",
+    "Jumpstart",
+    "Online",
+    "Marketing",
+    "Sales",
+    "TalentMatch",
+    "Alumni",
+    "All"] 
+%>
+
+<nav class="section-nav">
+  <ul class="section-links">
+    <% section_links.each do |link| %>
+      <li><a href=""><%= link %></a></li>
+    <% end %>
+  </ul>
+</nav>
+

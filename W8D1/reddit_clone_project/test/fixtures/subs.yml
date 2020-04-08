@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: subs
+#
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  description :text             not null
+#  moderator   :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  title: MyString
+  description: MyText
+  moderator: 1
+
+two:
+  title: MyString
+  description: MyText
+  moderator: 1

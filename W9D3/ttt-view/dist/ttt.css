@@ -1,0 +1,21 @@
+figure > ul {
+    display: flex;
+    width: 400px;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+figure li {
+    width: 100px;
+    height: 100px;
+    border: thin black;
+    border-style: solid;
+    background-color: gray;
+}
+
+figure li:hover {
+    background-color: yellow;
+}
+
+
+

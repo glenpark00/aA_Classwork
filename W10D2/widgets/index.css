@@ -1,0 +1,14 @@
+.clock {
+    display: inline-block;
+    text-align: center;
+    font-family: fantasy;
+    background-color: darkolivegreen;
+    width: 200px;
+    border: gold solid 5px;
+    border-radius: 3px;
+}
+
+.clock button {
+    background-color: gold;
+    font-family: cursive;
+}
